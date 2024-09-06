@@ -1,0 +1,137 @@
+/* Réinitialisation de base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  font-family: Arial, sans-serif;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+}
+/* Styles de navigation */
+
+.nav-links {
+  display: flex;
+  list-style: none;
+}
+
+.navbar {
+  background-color: #333;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  position: relative;
+}
+
+.burger {
+  cursor: pointer;
+  display: none;
+  flex-direction: column;
+}
+
+.burger span {
+  width: 25px;
+  height: 3px;
+  background-color: white;
+  margin: 5px;
+  transition: all 0.3s;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-links li a {
+  color: white;
+  text-decoration: none;
+}
+
+/* Slider */
+.slider {
+  width: 80%;
+  max-width: 600px;
+  overflow: hidden;
+  position: relative;
+  margin: 20px auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.slides {
+  display: flex;
+  transition: transform 0.5s ease-in-out;
+  width: 500%;
+}
+
+.slide {
+  width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slide img {
+  width: 80%;
+  height: 80%;
+  border-radius: 20px;
+  display: block;
+}
+
+/* Dots for the slider */
+.dots {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: lightgray;
+  margin: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, opacity 0.3s;
+}
+
+.dot.active {
+  background-color: black;
+  opacity: 1;
+}
+/* Media Queries tablette/smartphone */
+@media (max-width: 768px) {
+  .burger {
+    display: flex;
+  }
+
+  .nav-links {
+    position: absolute;
+    left: 0;
+    top: 68px;
+    background-color: #333;
+    flex-direction: column;
+    width: 100px;
+    height: 0;
+    overflow: hidden;
+    transition: height 0.3s ease;
+    z-index: 20;
+    align-items: center;
+  }
+  .slide img {
+    width: 70%;
+    height: 70%;
+  }
+
+  .nav-links.open {
+    height: 100vh;
+  }
+}
